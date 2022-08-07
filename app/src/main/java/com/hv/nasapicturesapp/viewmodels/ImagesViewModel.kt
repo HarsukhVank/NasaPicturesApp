@@ -13,7 +13,8 @@ class ImagesViewModel(private val context: Application) : ViewModel() {
         val jsonString = getDataFromAssetFile()
         val gson = Gson()
         val listImageType = object : TypeToken<List<ImagesDataModel>>() {}.type
-        return gson.fromJson(jsonString, listImageType)
+        val imagesList: List<ImagesDataModel> = gson.fromJson(jsonString, listImageType)
+        return imagesList.sortedByDescending { it.date }
     }
 
     private fun getDataFromAssetFile(): String? {

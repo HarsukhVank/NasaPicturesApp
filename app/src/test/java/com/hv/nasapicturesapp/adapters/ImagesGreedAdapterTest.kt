@@ -16,16 +16,17 @@ import org.robolectric.RobolectricTestRunner
 @RunWith(RobolectricTestRunner::class)
 class ImagesGreedAdapterTest {
     private lateinit var activity: ImagesGreedActivity
-    private lateinit var context : Context
+    private lateinit var context: Context
     private var imagesList = mutableListOf<ImagesDataModel>()
 
     @Before
-    fun setUp(){
-        activity = Robolectric.buildActivity(ImagesGreedActivity::class.java).create().resume().get()
+    fun setUp() {
+        activity =
+            Robolectric.buildActivity(ImagesGreedActivity::class.java).create().resume().get()
         context = activity
-        imagesList.add(ImagesDataModel("explanation1", "title1", "url1"))
-        imagesList.add(ImagesDataModel("explanation2", "title2", "url2"))
-        imagesList.add(ImagesDataModel("explanation3", "title3", "url3"))
+        imagesList.add(ImagesDataModel("date1", "explanation1", "title1", "url1"))
+        imagesList.add(ImagesDataModel("date2", "explanation2", "title2", "url2"))
+        imagesList.add(ImagesDataModel("date3", "explanation3", "title3", "url3"))
     }
 
     @Test

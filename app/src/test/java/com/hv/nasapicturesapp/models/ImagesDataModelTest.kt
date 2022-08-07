@@ -6,9 +6,10 @@ import org.junit.Test
 class ImagesDataModelTest {
 
     @Test
-    fun getSetDataTest(){
-        val imagesDataModel = ImagesDataModel("explanation", "title", "url")
+    fun getSetDataTest() {
+        val imagesDataModel = ImagesDataModel("date", "explanation", "title", "url")
         Assert.assertNotNull(imagesDataModel)
+        Assert.assertEquals("date", imagesDataModel.date)
         Assert.assertEquals("explanation", imagesDataModel.explanation)
         Assert.assertEquals("title", imagesDataModel.title)
         Assert.assertEquals("url", imagesDataModel.url)
